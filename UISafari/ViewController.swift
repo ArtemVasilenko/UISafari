@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -14,7 +15,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
+    
+    @IBAction func goToSafariBeach(_ sender: UIButton) {
+        guard let url = URL(string: "http://google.com") else { return }
+        let safariVc = SFSafariViewController(url: url)
+        present(safariVc, animated: true, completion: nil)
+    }
 }
 
